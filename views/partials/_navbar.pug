@@ -1,0 +1,24 @@
+nav.navbar.navbar-default.navbar-fixed-top
+	.navbar-header
+		a.navbar-brand(href='/')
+			img(src="/thumblr.png")
+	ul.nav.navbar-form.navbar-right
+					.form-group
+						if user
+										a(href='/createPost')
+													button.btn.btn-primary.btn-nav(type='button') Create Post
+										a(href='/profile')
+													button.btn.btn-success.btn-nav(type='button') Profile
+										a(href='/logout')
+													button.btn.btn-warning.btn-logout(type='button') Logout
+										p.navbar-text.navbar-left Signed in as:&nbsp;
+													a.navbar-link(href='/profile') #{user.username}
+						else
+										form(action='/login', method='POST')
+													.form-group
+															input#username.form-control(type='username', name='username', placeholder='Username')
+													.form-group
+															input#password.form-control(type='password', minlength='8', required, name='password', placeholder='Password')
+													button.btn.btn-success.btn-login(type='submit', id='submit') Login
+													a(href='/register')
+																button.btn.btn-info.btn-login(type='button') Register

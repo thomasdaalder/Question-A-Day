@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .profile
+
+    h1 Blogposts from #{user.username}
+    if user
+              each item in specificBlogs
+                a(href='/blog/' + item.id)
+                  p <h3>#{item.title}</h3>
+                p #{item.body}
+                p #{item.date}
+    else
+              p Please login first.
