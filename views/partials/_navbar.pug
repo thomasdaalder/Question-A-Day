@@ -1,7 +1,7 @@
 nav.navbar.navbar-default.navbar-fixed-top
 	.navbar-header
 		a.navbar-brand(href='/')
-			img(src="/qad.png")
+			img(src="/img/qad_logo.png")
 	ul.nav.navbar-form.navbar-right
 					.form-group
 						if user
@@ -16,9 +16,9 @@ nav.navbar.navbar-default.navbar-fixed-top
 						else
 										form(action='/login', method='POST')
 													.form-group
-															input#username.form-control(type='username', name='username', placeholder='Username')
+															input#username.form-control(type='username', name='username', value='thomas',placeholder='Username')
 													.form-group
-															input#password.form-control(type='password', minlength='8', required, name='password', placeholder='Password')
+															input#password.form-control(type='password', minlength='8', value='12345678',required, name='password', placeholder='Password')
 													button.btn.btn-success.btn-login(type='submit', id='submit') Login
 													a(href='/register')
 																button.btn.btn-info.btn-login(type='button') Register
