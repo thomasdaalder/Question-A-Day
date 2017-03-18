@@ -2,17 +2,19 @@ extends layout
 
 block content
 
-  form(action='/createPost', method='POST')
-    .form-group
-      label Title:
-      |
-      input#titleInput.form-control(type='text', name='titleInput', value='hey', placeholder='Title of your message')
-    .form-group
-      label Message:
-      |
-      textarea#messageInput.form-control(type='text', rows='5', name='messageInput', value='hey there!', placeholder='Type your message here...')
-    .form-group
-      label Date:
-      |
-      input#dateInput.form-control(type='text', name='dateInput', value='2017-02-02', placeholder='Fill in American date: 2017-02-25')
-    button.btn.btn-primary(type='submit') Submit
+  .row
+    .col-md-4.col-md-offset-4.signupform
+      h1 <span class='naam'>Hi #{user.username},</span> what did you learn today?
+
+      form(action='/createPost', method='POST')
+        .form-group
+          // <label for="exampleInputEmail1</label>
+          input#titleInput.form-control(type='text', name='titleInput', placeholder='Title of your message')
+        .form-group
+          // <label for="exampleInputEmail1</label>
+          textarea#messageInput.form-control(type='text', rows='5', name='messageInput', value='hey there!', placeholder='Type your message here...')
+        .form-group
+          // <label for="password">Password</label>
+          input#dateInput.form-control(type='text', name='dateInput', value='2017-02-02', placeholder='Fill in American date: 2017-02-25')
+
+        button.btn.btn-primary(type='submit') Submit

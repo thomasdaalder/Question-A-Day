@@ -28,11 +28,9 @@
     100% { opacity:1; }
 }
 
-.navbar-right {
-  margin-right:0px;
-}
 body {
   padding-top: 70px;
+
 
 }
 
@@ -110,7 +108,22 @@ a {
 
 .btn-login{
   border-radius:0px;
-  margin-right: 50px;
+  margin-right: 25px;
+
+}
+
+.navbar-right{
+  margin-right: 0px;
+}
+
+.btn-login{
+
+}
+
+.form-control{
+  color: rgb(129, 129, 129);
+  border-radius:0;
+  font-family: "Calluna-Regular";
 }
 
 #username{
@@ -125,12 +138,32 @@ a {
   margin-right: 10px;
 }
 
+.naam{
+  color: rgb(145, 145, 145);
+
+}
+
+.signupform{
+  font-family: 'Calluna-Regular';
+  text-align: center;
+
+}
+
+/*register*/
+
+.register-form{
+
+}
+
+.navbar-form{
+  padding-top: 10px;
+}
 .btn-nav{
   margin-right: 5px;
 }
 
 .btn-logout{
-  margin-right: 50px;
+  margin-right: 25px;
 }
 
 .navbar-text{

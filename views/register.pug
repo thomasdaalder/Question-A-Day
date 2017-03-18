@@ -1,23 +1,28 @@
 extends layout
 
 block content
+	.row
+	.col-md-4.col-md-offset-4.signupform
+		h1 Create Your Account
+		p This account gives you the possibility to upload projects, give feedback, love or comments on others. It also is the best way to browse through thousands of awesome projects, collaborate on code and get to know future employers/employees!
 
-	form(action='/register', method='POST', name='myForm')
-		.form-group
-			label(for='exampleInputEmail1') Username
-			input#exampleInputEmail1.form-control(type='username', name='username',value='thomas', placeholder='Username', required)
-		.form-group
-			label(for='exampleInputPassword1') Password
-			input#exampleInputPassword1.form-control(type='password', name='password', minlength='8',value='12345678', placeholder='Password', required)
-			label(for='exampleInputPassword2') Confirm Password
-			input#exampleInputPassword2.form-control(type='password', name='password_confirm', minlength='8', value='12345678', placeholder='Confirm password', required, oninput='check(this)')
-			script(language='javascript', type='text/javascript').
-				function check(input) {
-					if (input.value !== document.getElementById('exampleInputPassword1').value) {
-						input.setCustomValidity('Password must be Matching.');
-					} else {
-						// input is valid -- reset the error message
-						input.setCustomValidity('');
-					}
-				}
-		button.btn.btn-default(type='submit', value='submit') Register
+			form(action='/register', method='POST', name='myForm')
+					.form-group
+						// <label for="exampleInputEmail1</label>
+						input#exampleInputEmail1.form-control(type='username', name='username', placeholder='Username*', value='Thomas', required='')
+					.form-group
+						// <label for="username">Username</label>
+						input#exampleInputPassword1.form-control(type='password', name='password', minlength='8',value='12345678', placeholder='Password*', required='')
+					.form-group
+						// <label for="password">Password</label>
+						input#exampleInputPassword2.form-control(type='password', name='password_confirm', minlength='8', value='12345678', placeholder='Confirm password', required, oninput='check(this)')
+						script(language='javascript', type='text/javascript').
+							function check(input) {
+								if (input.value !== document.getElementById('exampleInputPassword1').value) {
+									input.setCustomValidity('Password must be Matching.');
+								} else {
+									// input is valid -- reset the error message
+									input.setCustomValidity('');
+								}
+							}
+					button.btn.btn-default(type='submit', value='submit') Register
