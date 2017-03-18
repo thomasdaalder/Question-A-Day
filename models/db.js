@@ -1,6 +1,6 @@
 // Enabling connection w/ Sequelize
 const Sequelize = require('sequelize');
-const connectionString = 'postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/nodeblog';
+const connectionString = 'postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/question';
 const db = new Sequelize(connectionString);
 
 // Defining users model

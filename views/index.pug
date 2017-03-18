@@ -1,19 +1,21 @@
 extends layout
 
 block content
-  h3 <center>The most awesome collection of blog posts all in one place</center>
-  h2#error-message= message
-  p#text-intro Good design is unobtrusive: Products fulfilling a purpose are like tools. They are neither decorative objects nor works of art. Their design should therefore be both neutral and restrained, to leave room for the user’s self-expression. Subscribe to our newsletter to get updates in your inbox.
-
 
   each item in blogList
     .card.card-outline-primary.mb-3.text-center
       .card-block
         blockquote.card-blockquote
           if user
-                  a(href='/blog/' + item.id)
-                    <h3>#{item.title}</h3>
-                  p #{item.body}
-                    footer #{item.date}
+            a(href='/blog/' + item.id)
+              <h3>#{item.title}</h3>
+            p #{item.body}
+              footer #{item.date}
           else
-                  p Please login to view all blog-posts.
+            
+            .intro-message
+              h3 <center>Question A Day</center>
+              h2#error-message= message
+              p#text-intro Good design is unobtrusive: Products fulfilling a purpose are like tools. They are neither decorative objects nor works of art. Their design should therefore be both neutral and restrained, to leave room for the user’s self-expression.
+              
+            
