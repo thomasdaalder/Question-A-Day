@@ -5,12 +5,12 @@ block content
 	form(action='/register', method='POST', name='myForm')
 		.form-group
 			label(for='exampleInputEmail1') Username
-			input#exampleInputEmail1.form-control(type='username', name='username', placeholder='Username', required)
+			input#exampleInputEmail1.form-control(type='username', name='username',value='thomas', placeholder='Username', required)
 		.form-group
 			label(for='exampleInputPassword1') Password
-			input#exampleInputPassword1.form-control(type='password', name='password', minlength='8', placeholder='Password', required)
+			input#exampleInputPassword1.form-control(type='password', name='password', minlength='8',value='12345678', placeholder='Password', required)
 			label(for='exampleInputPassword2') Confirm Password
-			input#exampleInputPassword2.form-control(type='password', name='password_confirm', minlength='8', placeholder='Confirm password', required, oninput='check(this)')
+			input#exampleInputPassword2.form-control(type='password', name='password_confirm', minlength='8', value='12345678', placeholder='Confirm password', required, oninput='check(this)')
 			script(language='javascript', type='text/javascript').
 				function check(input) {
 					if (input.value !== document.getElementById('exampleInputPassword1').value) {
