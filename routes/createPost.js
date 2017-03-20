@@ -4,7 +4,7 @@ const db = require('../models/db.js');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 
-// Create Post (GET) 
+// Create Post (GET)
 router.get('/', function (req, res) {
   const userSession = req.session.user;
   res.render('createPost', {user: userSession});

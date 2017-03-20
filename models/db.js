@@ -36,7 +36,7 @@ db.sync({
 .then(function(){
     return User.create({
       username: "kevin",
-      password: "hackme"
+      password: "12345678"
     })
   })
 .then(function(user){
@@ -52,6 +52,7 @@ db.sync({
         body: "Wow, thank you for writing this. This changed my life."
       })
 })
+
 .catch( (error) => console.log(error) );
 
 module.exports = {
