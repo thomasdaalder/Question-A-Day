@@ -12,13 +12,27 @@ block content
                 a(href='/blog/' + item.id)
                   <h3>#{item.title}</h3>
                 p #{item.body}
-                  footer #{item.date}
+                  footer #{item.createdAt}
                     a(href='https://twitter.com/intent/tweet/')
                       img#tweet(src='/img/tweet.png')
-                      
-        //- #footer
-          
-          p Feeling philosophical? Add questions here!
+                        
+      
+      //- 
+      //- nav(aria-label='...')
+      //-   ul.pager
+      //-     li.previous
+      //-       a(href='#')
+      //-         span(aria-hidden='true') ←
+      //-         | Newer 
+      //-     li.next
+      //-       a(href='#')
+      //-         | Older 
+      //-         span(aria-hidden='true') →
+
+      //-                 
+      //- #footer
+      //-     
+      //-     p Feeling philosophical? Add questions here!
           
     else
       #header

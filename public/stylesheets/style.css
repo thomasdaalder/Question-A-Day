@@ -12,6 +12,62 @@ h1,h2,h3{
 blockquote .small:before, blockquote footer:before, blockquote small:before{
   content: none;
 }
+/*dropdown button*/
+
+.row{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.dropdown .btn{
+  background-color:transparent!important;
+  border-color:transparent!important;
+  float: right;
+  white-space:normal;
+
+  color: black;
+}
+
+.dropdown-menu{
+  margin: 30px 10px 0px 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dropdown .btn:focus, .btn :active {
+   /*outline: none !important;
+   border:none !important;*/
+   color: black;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: 0!important;
+}
+
+.dropdown .btn:hover{
+  color: #00B18C;
+}
+
+.btn .btn-default .dropdown-toggle{
+  padding-top: 50px;
+  color: white;
+}
+
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default{
+  color: black!important;
+}
+
+.btn-default{
+  box-shadow:0!important;
+  text-shadow: 0!important;
+  background-image: none!important;
+  -webkit-box-shadow: none;
+}
+
+.btn:active
+{
+    box-shadow:none;
+}
 
 .typed-cursor{
     opacity: 1;
@@ -40,12 +96,6 @@ blockquote .small:before, blockquote footer:before, blockquote small:before{
 
 body {
   padding-top: 70px;
-
-
-}
-
-a {
-  color: #00B7FF;
 }
 /*Navbar*/
 
@@ -131,6 +181,11 @@ a {
 
 }
 
+.checkmenu{
+  padding:0px;
+  padding-left: 20px;
+}
+
 .navbar-right{
   margin-right: 0px;
 }
@@ -142,7 +197,7 @@ a {
 .form-control{
   color: rgb(129, 129, 129);
   border-radius:0;
-  font-family: "Calluna-Regular";
+
 }
 
 #username{
@@ -163,8 +218,19 @@ a {
 }
 
 .signupform{
-  font-family: 'Calluna-Regular';
-  text-align: center;
+  text-align: left;
+
+}
+
+#rq17{
+  font-family: "Calluna-Regular";
+
+  padding-bottom: 10px;
+}
+
+#q17length{
+  border: none;
+  color: #00B18C;;
 
 }
 
@@ -203,8 +269,19 @@ blockquote{
 
 a:hover{
   text-decoration: none;
-  color: rgb(28, 201, 98);
+  color: #00B18C;
 }
+
+.mymenu{
+  padding-top: 20px;
+
+  color: black;
+}
+
+.mymenu:hover{
+  color: #00B18C;
+}
+
 
 blockquote a {
   color: black;
@@ -291,7 +368,7 @@ footer{
 /*footer*/
 
 #footer{
-  position:fixed;
+  position: static;
   left:0px;
   right: 0;
   bottom:0px;
@@ -306,5 +383,8 @@ footer{
   font-family: 'Karla';
   text-align: center;
   padding-top: 35px;
+}
+
+.submitbutton{
 
 }
