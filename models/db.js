@@ -5,15 +5,14 @@ const db = new Sequelize(connectionString);
 
 // Defining users model
 const User = db.define('user', {
-  username: Sequelize.STRING,
+  username: {type: Sequelize.STRING, unique: true},
   password: Sequelize.STRING
 })
 
 // Defining posts model
 const Post = db.define('post', {
   title: Sequelize.STRING,
-  body: Sequelize.STRING(1000),
-  date: Sequelize.DATE
+  body: Sequelize.STRING(1000)
 })
 
 // Defining comments model
@@ -21,6 +20,12 @@ const Comment = db.define('comment', {
   username: Sequelize.STRING,
   body: Sequelize.STRING
 })
+
+// Defining questions
+const Question = db.define('question', {
+  question: Sequelize.STRING
+})
+
 
 // Creating relationships
 User.hasMany(Post);
@@ -41,15 +46,19 @@ db.sync({
   })
 .then(function(user){
       return user.createPost({
-      title: "How to Spot a Common Mental Error That Leads to Misguided Thinking",
-      body: "Human beings have been blaming strange behavior on the full moon for centuries. In the Middle Ages, for example, people claimed that a full moon could turn humans into werewolves.",
-      date: "2017-02-25"
+        title: "How to Spot a Common Mental Error That Leads to Misguided Thinking",
+        body: "Human beings have been blaming strange behavior on the full moon for centuries. In the Middle Ages, for example, people claimed that a full moon could turn humans into werewolves."
     })
   })
 .then(function(post) {
       return post.createComment({
         username: "Metta",
         body: "Wow, thank you for writing this. This changed my life."
+      })
+})
+.then(function(){
+      return Question.create({
+        question: "What have you learned today?"
       })
 })
 
@@ -59,5 +68,6 @@ module.exports = {
   db: db,
   User: User,
   Post: Post,
-  Comment: Comment
+  Comment: Comment,
+  Question: Question
 }

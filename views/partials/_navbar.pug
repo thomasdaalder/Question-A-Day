@@ -5,14 +5,19 @@ nav.navbar.navbar-default.navbar-fixed-top
 	ul.nav.navbar-form.navbar-right
 					.form-group
 						if user
-										a(href='/createPost')
-													button.btn.btn-primary.btn-nav(type='button') Create Post
-										a(href='/profile')
-													button.btn.btn-success.btn-nav(type='button') Profile
-										a(href='/logout')
-													button.btn.btn-warning.btn-logout(type='button') Logout
-										p.navbar-text.navbar-left Signed in as:&nbsp;
-													a.navbar-link(href='/profile') #{user.username}
+								#bs-example-navbar-collapse-1.collapse.navbar-collapse
+									a.mymenu(href='/createPost') Today's Question
+									ul.nav.navbar-nav.navbar-right
+										.dropdown
+											button#dropdownMenu1.btn.btn-default.dropdown-toggle.checkmenu(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true') #{user.username} 
+													span.caret
+											ul.dropdown-menu(aria-labelledby='dropdownMenu1')
+												li
+													a(href='/profile') Profile
+															li.divider(role='separator')
+												li
+													a(href='/logout') Log out
+
 						else
 										form(action='/login', method='POST')
 													.form-group

@@ -7,8 +7,15 @@ const session = require('express-session');
 // Create Post (GET)
 router.get('/', function (req, res) {
   const userSession = req.session.user;
-  res.render('createPost', {user: userSession});
+    db.Question.findAll()
+    .then((allQuestions) => {
+      res.render('createPost', {user: userSession,
+      allQuestions: allQuestions});
+
+
+    })
 })
+
 
 // Submitting a BLOG (POST)
 router.post('/', function (req, res) {
@@ -20,7 +27,7 @@ router.post('/', function (req, res) {
   .then(function(user) {
     return user.createPost({
         title: req.body.titleInput,
-        body: req.body.messageInput,
+        body: req.body.q17,
         date: req.body.dateInput
     })
   })
