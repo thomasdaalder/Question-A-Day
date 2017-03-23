@@ -6,15 +6,18 @@ const session = require('express-session');
 
 // Create Post (GET)
 router.get('/', function (req, res) {
-  var randomNumber = Math.floor(Math.random() * (6 - 1)) + 1
+  // var randomNumber = Math.floor(Math.random() * (6 - 1)) + 1
 
 
   const userSession = req.session.user;
-    db.Question.findOne({where: {id: randomNumber}})
-    .then((allQuestions) => {
-      console.log(allQuestions)
-      res.render('createPost', {user: userSession,
-      allQuestions: allQuestions});
+    db.Timer.findOne()
+    .then(function(timer){
+      db.Question.findOne({where: {id: timer.value}})
+      .then((allQuestions) => {
+        console.log(allQuestions)
+        res.render('createPost', {user: userSession,
+        allQuestions: allQuestions});
+      })
     })
 })
 
@@ -28,7 +31,7 @@ router.post('/', function (req, res) {
     })
   .then(function(user) {
     return user.createPost({
-        title: req.body.q17,
+        title: req.body.titleInput,
         body: req.body.q17,
         date: req.body.dateInput
     })

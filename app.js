@@ -66,6 +66,50 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// Syncing database and creating base user
+db.db.sync({
+	force: true,
+})
+.then(function(){
+    return db.User.create({
+      username: "kevin",
+      password: "12345678"
+    })
+  })
+.then(function(user){
+      return user.createPost({
+        title: "How to Spot a Common Mental Error That Leads to Misguided Thinking",
+        body: "Human beings have been blaming strange behavior on the full moon for centuries. In the Middle Ages, for example, people claimed that a full moon could turn humans into werewolves."
+    })
+  })
+.then(function(post) {
+      return post.createComment({
+        username: "Metta",
+        body: "Wow, thank you for writing this. This changed my life."
+      })
+})
+.then(function(){
+      return db.Question.bulkCreate([{
+        question: "What have you learned today?"
+      },
+      {
+        question: "What would you do different tomorrow?"
+      },
+      {
+        question: "Who made you laugh today?"
+      },
+      {
+        question: "What annoyed you today?"
+      },
+      {
+        question: "What is the most important thing in your life?"
+      },
+      {
+        question: "You couldn't live without...?"
+      },])
+})
+.catch( (error) => console.log(error) );
+
 // Running server
 app.listen(3000, () =>
 	{console.log('Server running')

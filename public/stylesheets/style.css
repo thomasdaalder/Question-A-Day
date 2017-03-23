@@ -8,6 +8,9 @@ a{
   color: none!important;
 }
 
+.submitbutton{
+  margin-top: -15px!important;
+}
 
 .btn-danger, .btn-default, .btn-info, .btn-primary, .btn-success, .btn-warning{
   border-radius: 0px!important;
@@ -37,6 +40,7 @@ h1,h2,h3{
   font-family: 'Karla';
   letter-spacing: -0.04em;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 blockquote .small:before, blockquote footer:before, blockquote small:before{
@@ -251,7 +255,8 @@ body {
 
 #q17length{
   border: none;
-  color: #00B18C;;
+  color: #00B18C;
+  float: right;
 
 }
 
