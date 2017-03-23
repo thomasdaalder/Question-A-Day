@@ -10,6 +10,7 @@ const pg = require('pg');
 const db = require(__dirname + '/models/db.js')
 const app = express();
 const bcrypt = require('bcrypt');
+const moment = require('moment');
 
 
 // Including usage of routes

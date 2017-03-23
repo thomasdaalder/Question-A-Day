@@ -12,7 +12,7 @@ block content
                         a(href='/blog/' + item.id)
                           <h3>#{item.title}</h3>
                         p #{item.body}
-                          footer #{item.date}
+                          footer #{item.createdAt}
                             a(href='https://twitter.com/intent/tweet/')
                               img#tweet(src='/img/tweet.png')
     else

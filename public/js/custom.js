@@ -25,6 +25,7 @@ function newTyped(){ /* A new typed object */ }
 
 function foo(){ console.log("Callback"); }
 
+// Textcounter functie onder input
 function textCounter(field,cnt, maxlimit) {
 	var cntfield = document.getElementById(cnt)
      if (field.value.length > maxlimit) // if too long...trim it!

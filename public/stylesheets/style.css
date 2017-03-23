@@ -3,6 +3,36 @@
     src: url("/fonts/Calluna-Regular.otf");
 }
 
+a{
+  text-decoration: none!important;
+  color: none!important;
+}
+
+
+.btn-danger, .btn-default, .btn-info, .btn-primary, .btn-success, .btn-warning{
+  border-radius: 0px!important;
+  border-color: transparent!important;
+  text-shadow: none!important;
+  -webkit-box-shadow: none!important;
+  box-shadow: none!important;
+  background-color: #00B18C!important;
+  background-image: none!important;
+  color: white;
+}
+
+.btn-primary:hover{
+  background-color: #4AB18C!important;
+}
+.register-button:hover{
+  background-color: #4AB18C!important;
+  color: white;
+
+}
+.btn-register{
+  background-color: #0096CF!important;
+}
+
+
 h1,h2,h3{
   font-family: 'Karla';
   letter-spacing: -0.04em;
@@ -29,9 +59,14 @@ blockquote .small:before, blockquote footer:before, blockquote small:before{
 }
 
 .dropdown-menu{
-  margin: 30px 10px 0px 0px;
+  margin: 40px 10px 0px 0px;
   -webkit-box-shadow: none;
   box-shadow: none;
+  min-width:0px!important;
+}
+
+.navbar-right .dropdown-menu {
+  right: -15px!important;
 }
 
 .dropdown .btn:focus, .btn :active {
@@ -45,23 +80,12 @@ blockquote .small:before, blockquote footer:before, blockquote small:before{
 }
 
 .dropdown .btn:hover{
-  color: #00B18C;
+  color: #4AB18C;
 }
 
 .btn .btn-default .dropdown-toggle{
   padding-top: 50px;
   color: white;
-}
-
-.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default{
-  color: black!important;
-}
-
-.btn-default{
-  box-shadow:0!important;
-  text-shadow: 0!important;
-  background-image: none!important;
-  -webkit-box-shadow: none;
 }
 
 .btn:active
@@ -175,15 +199,12 @@ body {
   border-radius:0!important;
 }
 
-.btn-login{
-  border-radius:0px;
-  margin-right: 25px;
-
+.link{
+  margin-right:0px;
 }
 
-.checkmenu{
-  padding:0px;
-  padding-left: 20px;
+.btn-success:hover{
+  background-color: #4AB18C!important;
 }
 
 .navbar-right{
@@ -209,11 +230,11 @@ body {
 }
 
 #submit{
-  margin-right: 10px;
+  margin-right: 30px;
 }
 
 .naam{
-  color: rgb(145, 145, 145);
+  color: #00B18C;
 
 }
 
@@ -263,13 +284,12 @@ blockquote{
   text-align: left;
   padding-left: 260px;
   padding-right: 260px;
-
   border-left: 0px solid #eee; */
 }
 
 a:hover{
   text-decoration: none;
-  color: #00B18C;
+  color: #4AB18C;
 }
 
 .mymenu{
@@ -279,7 +299,7 @@ a:hover{
 }
 
 .mymenu:hover{
-  color: #00B18C;
+  color: #4AB18C;
 }
 
 
@@ -383,8 +403,4 @@ footer{
   font-family: 'Karla';
   text-align: center;
   padding-top: 35px;
-}
-
-.submitbutton{
-
 }

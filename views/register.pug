@@ -1,4 +1,7 @@
-extends layout
+include ./partials/_head.pug
+include ./partials/_footer.pug
+include ./partials/_scripts.pug
+include ./partials/_navbar-register.pug
 
 block content	
 	.row
@@ -25,4 +28,4 @@ block content
 									input.setCustomValidity('');
 								}
 							}
-					button.btn.btn-default(type='submit', value='submit') Register
+					button.btn.btn-default.register-button(type='submit', value='submit') Register

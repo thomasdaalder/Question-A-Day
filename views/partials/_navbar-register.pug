@@ -8,9 +8,6 @@ nav.navbar.navbar-default.navbar-fixed-top
 	ul.nav.navbar-form.navbar-right
 					.form-group
 						if user
-								#bs-example-navbar-collapse-1.collapse.navbar-collapse
-									a.btn.btn-success.btn-login.link(href='/createPost') Today's Question
-		
 									ul.nav.navbar-nav.navbar-right
 										.dropdown
 											button#dropdownMenu1.btn.btn-default.dropdown-toggle.checkmenu(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true') #{user.username} 
@@ -22,13 +19,5 @@ nav.navbar.navbar-default.navbar-fixed-top
 												li
 													a(href='/logout') Log out
 
-													
 						else
-										form(action='/login', method='POST')
-													.form-group
-															input#username.form-control(type='username', name='username', value='Thomas',placeholder='Username')
-													.form-group
-															input#password.form-control(type='password', minlength='8', value='12345678',required, name='password', placeholder='Password')
-													button.btn.btn-success.btn-login(type='submit', id='submit') Login
-													a(href='/register')
-																button.btn.btn-info.btn-register(type='button') Register
+										

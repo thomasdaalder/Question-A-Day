@@ -26,6 +26,10 @@ const Question = db.define('question', {
   question: Sequelize.STRING
 })
 
+//define table timer.
+const Timer = db.define('timer',{
+  value: Sequelize.INTEGER
+})
 
 // Creating relationships
 User.hasMany(Post);
@@ -57,9 +61,24 @@ db.sync({
       })
 })
 .then(function(){
-      return Question.create({
+      return Question.bulkCreate([{
         question: "What have you learned today?"
-      })
+      },
+      {
+        question: "What would you do different tomorrow?"
+      },
+      {
+        question: "Who made you laugh today?"
+      },
+      {
+        question: "What annoyed you today?"
+      },
+      {
+        question: "What is the most important thing in your life?"
+      },
+      {
+        question: "You couldn't live without...?"
+      },])
 })
 
 .catch( (error) => console.log(error) );
@@ -69,5 +88,6 @@ module.exports = {
   User: User,
   Post: Post,
   Comment: Comment,
-  Question: Question
+  Question: Question,
+  Timer: Timer,
 }

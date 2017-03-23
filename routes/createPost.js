@@ -6,13 +6,15 @@ const session = require('express-session');
 
 // Create Post (GET)
 router.get('/', function (req, res) {
+  var randomNumber = Math.floor(Math.random() * (6 - 1)) + 1
+
+
   const userSession = req.session.user;
-    db.Question.findAll()
+    db.Question.findOne({where: {id: randomNumber}})
     .then((allQuestions) => {
+      console.log(allQuestions)
       res.render('createPost', {user: userSession,
       allQuestions: allQuestions});
-
-
     })
 })
 
@@ -26,7 +28,7 @@ router.post('/', function (req, res) {
     })
   .then(function(user) {
     return user.createPost({
-        title: req.body.titleInput,
+        title: req.body.q17,
         body: req.body.q17,
         date: req.body.dateInput
     })
