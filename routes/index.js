@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
   db.Post.findAll()
   .then((allPosts) => {
     for(var i = 0; i < allPosts.length; i++) {
-      allPosts[i].createdAt = moment(allPosts[i].createdAt).format('DD-MM-YYYY')
+    allPosts[i].createdAt.toString().split(" ").slice(0, 4).join(" ");
     }
     console.log(allPosts)
     res.render('index',

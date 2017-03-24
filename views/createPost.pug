@@ -10,8 +10,8 @@ block content
       h1 <span class='naam'>Hi #{user.username}!</span> #{allQuestions.question}
 
       form(action='/createPost', method='POST')
-        //- .form-group
-        //-   input#titleInput.form-control(type='text', name='titleInput', placeholder='Title of your message', required)
+        .form-group
+          input#titleInput.form-control(type='text',value=allQuestions.question name='titleInput', required)
         .form-group
           textarea#messageInput.form-control.scanwid(type='text', value='hey there!', placeholder='Type your answer here...', required, onkeydown='textCounter(this,300);', onkeyup="textCounter(this,'q17length' ,300)", name='q17', rows='5', cols='')
         #rq17

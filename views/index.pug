@@ -1,21 +1,21 @@
 extends layout
 
 block content
-
-    if user
-      h1 Answers from the world
-      each item in blogList
-        .card.card-outline-primary.mb-3.text-center
-          .card-block
-            blockquote.card-blockquote
-              if user
-                a(href='/blog/' + item.id)
-                  <h3>#{item.title}</h3>
-                p #{item.body}
-                  footer #{item.createdAt}
-                    a(href='https://twitter.com/intent/tweet/')
-                      img#tweet(src='/img/tweet.png')
-                        
+  
+      if user
+        .row
+          .col-sm-12.col-md-12
+            h1 Answers from the world
+            each item in blogList
+              .card.card-outline-primary.mb-3.text-center
+                .card-block
+                  blockquote.card-blockquote
+                    if user
+                      a(href='/blog/' + item.id)
+                        <h3>#{item.title}</h3>
+                      p #{item.body}
+                        footer#mainn #{user.username} | #{item.createdAt}
+                          
       
       //- 
       //- nav(aria-label='...')
@@ -33,18 +33,18 @@ block content
       //- #footer
       //-     
       //-     p Feeling philosophical? Add questions here!
-          
-    else
-      #header
-        .wrap
-          .type-wrap
-            #typed-strings
-              p What did you<br>learn today?
-              p What would you do<br>different tomorrow?
-              p What is your<br>ultimate dream?
-            span#typed(style='white-space:pre;')
-          
-      .intro-message
-        h3 <center>Keep track of your mental well-being</center>
-        p#text-intro Question A Day asks you a personal question every day so you can reflect, improve and keep track of your mental well-being. Sign up now and start being mindful every day.
+            
+      else
+        #header
+          .wrap
+            .type-wrap
+              #typed-strings
+                p What did you<br>learn today?
+                p What would you do<br>different tomorrow?
+                p What is your<br>ultimate dream?
+              span#typed(style='white-space:pre;')
+            
+        .intro-message
+          h3 <center>Keep track of your mental well-being</center>
+          p#text-intro Question A Day asks you a personal question every day so you can reflect, improve and keep track of your mental well-being. Sign up now and start being mindful every day.
       

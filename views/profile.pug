@@ -2,7 +2,10 @@ extends layout
 
 block content
 
-    h1 Answers from #{user.username}
+    
+    #footer
+        
+        h1 #{user.username} |
     if user
               each item in specificBlogs
                 .card.card-outline-primary.mb-3.text-center

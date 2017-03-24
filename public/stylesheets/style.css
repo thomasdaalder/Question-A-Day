@@ -2,7 +2,9 @@
     font-family: "Calluna-Regular";
     src: url("/fonts/Calluna-Regular.otf");
 }
-
+#titleInput{
+  display: none;
+}
 a{
   text-decoration: none!important;
   color: none!important;
@@ -29,7 +31,15 @@ a{
 .register-button:hover{
   background-color: #4AB18C!important;
   color: white;
+}
 
+.register-button:active{
+  background-color: #4AB18C!important;
+  color: white;
+}
+
+.register-button{
+  background-color: #00B18C!important;
 }
 .btn-register{
   background-color: #0096CF!important;
@@ -58,7 +68,6 @@ blockquote .small:before, blockquote footer:before, blockquote small:before{
   border-color:transparent!important;
   float: right;
   white-space:normal;
-
   color: black;
 }
 
@@ -71,12 +80,6 @@ blockquote .small:before, blockquote footer:before, blockquote small:before{
 
 .navbar-right .dropdown-menu {
   right: -15px!important;
-}
-
-.dropdown .btn:focus, .btn :active {
-   /*outline: none !important;
-   border:none !important;*/
-   color: black;
 }
 
 .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
@@ -262,10 +265,6 @@ body {
 
 /*register*/
 
-.register-form{
-
-}
-
 .navbar-form{
   padding-top: 10px;
 }
@@ -403,9 +402,10 @@ footer{
 
 }
 
-#footer p{
+#footer h1{
   color: white;
   font-family: 'Karla';
-  text-align: center;
+  text-align: left;
   padding-top: 35px;
+  padding-left: 100px;
 }

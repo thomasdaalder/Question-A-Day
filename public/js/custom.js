@@ -34,3 +34,7 @@ function textCounter(field,cnt, maxlimit) {
 		else
 		cntfield.value = maxlimit - field.value.length;
 }
+
+$('#mainn').text(function (_,txt) {
+    return txt.slice(0, -14);
+});
