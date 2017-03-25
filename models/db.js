@@ -12,7 +12,8 @@ const User = db.define('user', {
 // Defining posts model
 const Post = db.define('post', {
   title: Sequelize.STRING,
-  body: Sequelize.STRING(1000)
+  body: Sequelize.STRING(1000),
+  point: Sequelize.INTEGER
 })
 
 // Defining comments model

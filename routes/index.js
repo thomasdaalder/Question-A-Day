@@ -10,10 +10,6 @@ router.get('/', (req, res) => {
   const userSession = req.session.user
   db.Post.findAll()
   .then((allPosts) => {
-    for(var i = 0; i < allPosts.length; i++) {
-    allPosts[i].createdAt.toString().split(" ").slice(0, 4).join(" ");
-    }
-    console.log(allPosts)
     res.render('index',
     {blogList: allPosts,
     user: userSession

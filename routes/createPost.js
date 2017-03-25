@@ -33,7 +33,7 @@ router.post('/', function (req, res) {
     return user.createPost({
         title: req.body.titleInput,
         body: req.body.q17,
-        date: req.body.dateInput
+        point: req.body.pointInput
     })
   })
   .then(function() {

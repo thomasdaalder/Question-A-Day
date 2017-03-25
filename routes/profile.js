@@ -9,9 +9,17 @@ router.get('/', function(req, res) {
 	const userSession = req.session.user;
 	db.Post.findAll({ where: { userId: userSession.id } })
 		.then(function(blogsByUser) {
+			var allPoints = 0
+		 	for(var i = 0; i < blogsByUser.length; i++){
+			 // Adding up the total result
+			 allPoints += parseInt(blogsByUser[i].point / blogsByUser.length);
+		 }
+
 			res.render('profile',
 				{specificBlogs: blogsByUser,
-				user: userSession})
+				user: userSession,
+				allPoints:allPoints
+				})
 			})
 })
 

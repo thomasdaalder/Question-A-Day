@@ -10,8 +10,17 @@ a{
   color: none!important;
 }
 
-.submitbutton{
-  margin-top: -15px!important;
+#status{
+
+
+  text-align: center;
+  font-family: "Calluna-Regular";
+  letter-spacing: 0.01em;
+  font-size: 15px;
+  padding-top: 5px;
+  text-align: center;
+  color: white;
+
 }
 
 .btn-danger, .btn-default, .btn-info, .btn-primary, .btn-success, .btn-warning{
@@ -389,7 +398,7 @@ footer{
 }
 
 
-/*footer*/
+/*footers!*/
 
 #footer{
   position: static;
@@ -402,6 +411,81 @@ footer{
 
 }
 
+#footer4{
+  background:#FF453D;
+  position: static;
+  left:0px;
+  right: 0;
+  bottom:0px;
+  height:120px;
+  width:100%;
+}
+
+#footer5{
+  background:#3E474F;
+  position: static;
+  left:0px;
+  right: 0;
+  bottom:0px;
+  height:120px;
+  width:100%;
+}
+
+#footer6{
+  background:#596D82;
+  position: static;
+  left:0px;
+  right: 0;
+  bottom:0px;
+  height:120px;
+  width:100%;
+}
+
+#footer7{
+  background:#00B160;
+  position: static;
+  left:0px;
+  right: 0;
+  bottom:0px;
+  height:120px;
+  width:100%;
+}
+
+#footer8{
+  background:#0096CF;
+  position: static;
+  left:0px;
+  right: 0;
+  bottom:0px;
+  height:120px;
+  width:100%;
+}
+
+#footer9{
+  background:#4AB18C;
+  position: static;
+  left:0px;
+  right: 0;
+  bottom:0px;
+  height:120px;
+  width:100%;
+}
+
+#footer10{
+  background:#00B18C;
+  position: static;
+  left:0px;
+  right: 0;
+  bottom:0px;
+  height:120px;
+  width:100%;
+}
+
+#info{
+  color: white;
+  margin-bottom: 0px;
+  padding-top: 20px;
+}
 #footer h1{
   color: white;
   font-family: 'Karla';

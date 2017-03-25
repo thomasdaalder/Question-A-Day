@@ -3,8 +3,6 @@ extends layout
 block content
   
       if user
-        .row
-          .col-sm-12.col-md-12
             h1 Answers from the world
             each item in blogList
               .card.card-outline-primary.mb-3.text-center
@@ -14,8 +12,7 @@ block content
                       a(href='/blog/' + item.id)
                         <h3>#{item.title}</h3>
                       p #{item.body}
-                        footer#mainn #{user.username} | #{item.createdAt}
-                          
+                        footer#mainn #{item.createdAt}
       
       //- 
       //- nav(aria-label='...')

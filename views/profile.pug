@@ -1,22 +1,48 @@
 extends layout
 
 block content
+  
+    h1
+          if allPoints <= 4
+            #footer4
+              h1#info #{user.username} | #{allPoints}
+              p#status "Stay positive. Make goals for yourself to feel more accomplishement out of each day. <br>Only you have the power to change your environment!"</br>
+          if allPoints === 5
+            #footer5
+              h1#info #{user.username} | #{allPoints}
+              p#status "Make a list for yourself. What makes you feel unhappy or stressed. <br>Also, what makes you feel happy? Lean toward the positive to improve your situation."</br>
+          if allPoints === 6
+            #footer6
+              h1#info #{user.username} | #{allPoints}
+              p#status "Seems like you are not really sure where you are at life. <br>Maybe try to set goals for yourself."</br>
+          if allPoints === 7
+            #footer7
+              h1#info #{user.username} | #{allPoints}
+              p#status "Good job! Looks like your life is going the way you want. <br>There is some improvement to be made. Work on it and you'll feel better."</br>
+          if allPoints === 8
+            #footer8
+              h1#info #{user.username} | #{allPoints}
+              p#status "Very good. You can handle most things well."
+          if allPoints === 9
+            #footer9
+              h1#info #{user.username} | #{allPoints}
+              p#status "This is the way to go! Your are a delight in life. Show it to your environment to help others."
+          if allPoints === 10
+            #footer10
+              h1#info #{user.username} | #{allPoints}
+              p#status "You are the best!"
 
-    
-    #footer
-        
-        h1 #{user.username} |
     if user
-              each item in specificBlogs
-                .card.card-outline-primary.mb-3.text-center
-                  .card-block
-                    blockquote.card-blockquote
-                      if user
-                        a(href='/blog/' + item.id)
-                          <h3>#{item.title}</h3>
-                        p #{item.body}
-                          footer #{item.createdAt}
-                            a(href='https://twitter.com/intent/tweet/')
-                              img#tweet(src='/img/tweet.png')
+      
+      each item in specificBlogs
+          .card.card-outline-primary.mb-3.text-center
+            .card-block
+              blockquote.card-blockquote
+                if user
+                  a(href='/blog/' + item.id)
+                    <h3>#{item.title}</h3>
+                  p #{item.body}
+                    footer #{item.createdAt} Mood: #{item.point}
+              
     else
               p Please login first.

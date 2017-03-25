@@ -35,6 +35,7 @@ function textCounter(field,cnt, maxlimit) {
 		cntfield.value = maxlimit - field.value.length;
 }
 
+// createdAt date without the time
 $('#mainn').text(function (_,txt) {
     return txt.slice(0, -14);
 });

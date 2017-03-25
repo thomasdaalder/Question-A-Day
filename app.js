@@ -20,7 +20,54 @@ const login = require('./routes/login');
 const logout = require('./routes/logout');
 const profile = require('./routes/profile');
 const createPost = require('./routes/createPost');
-const grabBlog = require('./routes/grabBlog')
+const grabBlog = require('./routes/grabBlog');
+
+//timer program variables
+const questionId = 1
+const testChangeOfQuestionTime = 5000 //5 seconds
+const changeOfQuestionTime = 1000 * 60 * 60 * 24 //24 hours
+
+function checkForUpdates(amountOfQuestions){
+  setInterval(function(){
+      updateQuestionForTheDay(amountOfQuestions)
+  }, testChangeOfQuestionTime)
+}
+
+function updateQuestionForTheDay(amountOfQuestions){
+  db.Timer.findOne()
+  .then(timerValue => {
+    var questionOfTheDay = timerValue.value===0 ? 1 : timerValue.value % amountOfQuestions + 1
+    timerValue.update({
+      value: questionOfTheDay
+    })
+  })
+  .catch( e => console.log(e))
+}
+
+function startTimer(){
+  setTimeout(function(){
+    db.Timer.create({
+      value: questionId
+    })
+    //get the amount of questions
+    .then(function(){
+      db.Question.findOne({
+        order: [ [ 'id','DESC']]
+      })
+      .then( lastQuestion => {
+        console.log('lastQuestion.id')
+        console.log(lastQuestion.id)
+        checkForUpdates(lastQuestion.id)
+      })
+    })
+    .catch(e => console.log(e))
+
+  }, 1500)
+}
+
+//Starting the timer here
+startTimer();
+
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -79,7 +126,8 @@ db.db.sync({
 .then(function(user){
       return user.createPost({
         title: "How to Spot a Common Mental Error That Leads to Misguided Thinking",
-        body: "Human beings have been blaming strange behavior on the full moon for centuries. In the Middle Ages, for example, people claimed that a full moon could turn humans into werewolves."
+        body: "Human beings have been blaming strange behavior on the full moon for centuries. In the Middle Ages, for example, people claimed that a full moon could turn humans into werewolves.",
+        point: 7
     })
   })
 .then(function(post) {

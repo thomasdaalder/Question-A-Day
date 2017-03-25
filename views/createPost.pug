@@ -17,6 +17,19 @@ block content
         #rq17
           input#q17length( readonly='', type='text', name='q17length', size='3', maxlength='3', value='300')
           characters
-
-        
+            .form-group
+            select#pointInput.form-control(type='text',name='pointInput', required)
+              option(value='', disabled='disabled', selected='selected') How do you feel?
+              option(value='1') 1 Worst
+              option(value='2') 2 Very bad
+              option(value='3') 3 Bad
+              option(value='4') 4 Below average
+              option(value='5') 5 Average
+              option(value='6') 6 Above average
+              option(value='7') 7 Fine
+              option(value='8') 8 Good
+              option(value='9') 9 Very good
+              option(value='10') 10 Best
         button.btn.btn-primary.submitbutton(type='submit') Submit
+//- else 
+//-   h1 Come back tomorrow for another question.
