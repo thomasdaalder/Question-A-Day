@@ -6,7 +6,8 @@ const db = new Sequelize(connectionString);
 // Defining users model
 const User = db.define('user', {
   username: {type: Sequelize.STRING, unique: true},
-  password: Sequelize.STRING
+  password: Sequelize.STRING,
+  email: Sequelize.STRING
 })
 
 // Defining posts model

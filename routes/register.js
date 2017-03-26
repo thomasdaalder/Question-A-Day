@@ -21,7 +21,8 @@ router.post('/', function(req, res){
 	bcrypt.hash(req.body.password, 8, (err, hash)=>{
 	db.User.create({
 		username: req.body.username,
-		password: hash
+		password: hash,
+		email: req.body.email
 	})
 	.then( ()=>{
 		res.redirect('/');

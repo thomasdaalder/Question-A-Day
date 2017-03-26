@@ -25,24 +25,24 @@ router.get('/:blogID', (req, res) => {
   .catch(e => console.log(e))
 })
 
-// Submit comments under the specific blog ID
-router.post('/:blogId', (req, res) => {
-  const userSession = req.session.user;
-  db.Post.findOne({
-    where: {
-      id: req.params.blogId
-    }
-  })
-  .then(function (post) {
-    post.createComment({
-      username: req.body.username,
-      body: req.body.comment
-    })
-  })
-  .then(function() {
-    res.redirect('/blog/' + req.params.blogId);
-  })
-  .catch(e => console.log(e))
-})
+// // Submit comments under the specific blog ID
+// router.post('/:blogId', (req, res) => {
+//   const userSession = req.session.user;
+//   db.Post.findOne({
+//     where: {
+//       id: req.params.blogId
+//     }
+//   })
+//   .then(function (post) {
+//     post.createComment({
+//       username: req.body.username,
+//       body: req.body.comment
+//     })
+//   })
+//   .then(function() {
+//     res.redirect('/blog/' + req.params.blogId);
+//   })
+//   .catch(e => console.log(e))
+// })
 
 module.exports = router;

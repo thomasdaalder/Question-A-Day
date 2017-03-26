@@ -7,9 +7,11 @@ block content
 	.row
 	.col-md-4.col-md-offset-4.signupform
 		h1 Create Your Account
-		p This account gives you the possibility to upload projects, give feedback, love or comments on others. It also is the best way to browse through thousands of awesome projects, collaborate on code and get to know future employers/employees!
+		p This account gives you the possibility to keep an online diary filled with your answers to everyday questions. It's only visible to you.
 
 			form(action='/register', method='POST', name='myForm')
+					.form-group
+						input#email.form-control(type='email', name='email', placeholder='Email*', value='thomas@gmail.com', required='')
 					.form-group
 						// <label for="exampleInputEmail1</label>
 						input#exampleInputEmail1.form-control(type='username', name='username', placeholder='Username*', value='Thomas', required='')

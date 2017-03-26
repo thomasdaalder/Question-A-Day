@@ -3,33 +3,9 @@ extends layout
 block content
   
       if user
-            h1 Answers from the world
-            each item in blogList
-              .card.card-outline-primary.mb-3.text-center
-                .card-block
-                  blockquote.card-blockquote
-                    if user
-                      a(href='/blog/' + item.id)
-                        <h3>#{item.title}</h3>
-                      p #{item.body}
-                        footer#mainn #{item.createdAt}
-      
-      //- 
-      //- nav(aria-label='...')
-      //-   ul.pager
-      //-     li.previous
-      //-       a(href='#')
-      //-         span(aria-hidden='true') ←
-      //-         | Newer 
-      //-     li.next
-      //-       a(href='#')
-      //-         | Older 
-      //-         span(aria-hidden='true') →
-
-      //-                 
-      //- #footer
-      //-     
-      //-     p Feeling philosophical? Add questions here!
+        .intro-message2
+              a(href='/createPost')
+                img#new(src="/img/new.png")
             
       else
         #header

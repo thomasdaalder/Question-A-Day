@@ -36,6 +36,18 @@ function textCounter(field,cnt, maxlimit) {
 }
 
 // createdAt date without the time
-$('#mainn').text(function (_,txt) {
-    return txt.slice(0, -14);
+$('.born').text(function (_,txt) {
+    return txt.slice(0, -15);
 });
+
+function newQuestion(){
+  console.log('het werkt!')
+}
+
+var options = {
+  valueNames: [ 'name', 'born', 'question' ],
+  page: 3,
+  pagination: true
+};
+
+var userList = new List('users', options);

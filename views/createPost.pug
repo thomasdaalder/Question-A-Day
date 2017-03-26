@@ -4,32 +4,32 @@ include ./partials/_scripts.pug
 include ./partials/_navbar-register.pug
 
 block content
+  if newQuestion
+    img#new(src="/img/old.png")
+  else    
+    .row
+      .col-md-4.col-md-offset-4.signupform
+        h1 <span class='naam'>Hi #{user.username}.</span> #{allQuestions.question}
 
-  .row
-    .col-md-4.col-md-offset-4.signupform
-      h1 <span class='naam'>Hi #{user.username}!</span> #{allQuestions.question}
-
-      form(action='/createPost', method='POST')
-        .form-group
-          input#titleInput.form-control(type='text',value=allQuestions.question name='titleInput', required)
-        .form-group
-          textarea#messageInput.form-control.scanwid(type='text', value='hey there!', placeholder='Type your answer here...', required, onkeydown='textCounter(this,300);', onkeyup="textCounter(this,'q17length' ,300)", name='q17', rows='5', cols='')
-        #rq17
-          input#q17length( readonly='', type='text', name='q17length', size='3', maxlength='3', value='300')
-          characters
-            .form-group
-            select#pointInput.form-control(type='text',name='pointInput', required)
-              option(value='', disabled='disabled', selected='selected') How do you feel?
-              option(value='1') 1 Worst
-              option(value='2') 2 Very bad
-              option(value='3') 3 Bad
-              option(value='4') 4 Below average
-              option(value='5') 5 Average
-              option(value='6') 6 Above average
-              option(value='7') 7 Fine
-              option(value='8') 8 Good
-              option(value='9') 9 Very good
-              option(value='10') 10 Best
-        button.btn.btn-primary.submitbutton(type='submit') Submit
-//- else 
-//-   h1 Come back tomorrow for another question.
+        form(action='/createPost', method='POST')
+          .form-group
+            input#titleInput.form-control(type='text',value=allQuestions.question name='titleInput', required)
+          .form-group
+            textarea#messageInput.form-control.scanwid(type='text', value='hey there!', placeholder='Type your answer here...', required, onkeydown='textCounter(this,300);', onkeyup="textCounter(this,'q17length' ,300)", name='q17', rows='5', cols='')
+          #rq17
+            input#q17length( readonly='', type='text', name='q17length', size='3', maxlength='3', value='300')
+            characters
+              .form-group
+              select#pointInput.form-control.pointInput(type='text',name='pointInput', required)
+                option(value='', disabled='disabled', selected='selected') How was your day?
+                option(value='1') 1 Worst
+                option(value='2') 2 Very bad
+                option(value='3') 3 Bad
+                option(value='4') 4 Below average
+                option(value='5') 5 Average
+                option(value='6') 6 Above average
+                option(value='7') 7 Fine
+                option(value='8') 8 Good
+                option(value='9') 9 Very good
+                option(value='10') 10 Best
+          button#submitbutton.btn.btn-primary.submitbutton(type='submit', onclick='newQuestion()') Submit

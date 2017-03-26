@@ -10,12 +10,15 @@ a{
   color: none!important;
 }
 
+body{
+  font-family: "Karla";
+  font-weight: 400;
+}
+
 #status{
-
-
   text-align: center;
   font-family: "Calluna-Regular";
-  letter-spacing: 0.01em;
+  letter-spacing: 0.04em;
   font-size: 15px;
   padding-top: 5px;
   text-align: center;
@@ -24,7 +27,7 @@ a{
 }
 
 .btn-danger, .btn-default, .btn-info, .btn-primary, .btn-success, .btn-warning{
-  border-radius: 0px!important;
+  border-radius: 10px!important;
   border-color: transparent!important;
   text-shadow: none!important;
   -webkit-box-shadow: none!important;
@@ -60,6 +63,7 @@ h1,h2,h3{
   letter-spacing: -0.04em;
   text-align: center;
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 blockquote .small:before, blockquote footer:before, blockquote small:before{
@@ -193,6 +197,17 @@ body {
 
 }
 
+.intro-message2{
+  font-family: 'Karla';
+  font-weight: 700;
+  letter-spacing: 0em;
+  padding-top: 50px;
+  text-align: center;
+  padding-left: 150px;
+  padding-right: 150px;
+
+}
+
 #text-intro{
   text-align: center;
   font-family: 'Calluna-Regular';
@@ -219,6 +234,10 @@ body {
   margin-right:0px;
 }
 
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+  border-color: transparent!important;
+  box-shadow: none!important;
+}
 .btn-success:hover{
   background-color: #4AB18C!important;
 }
@@ -233,8 +252,12 @@ body {
 
 .form-control{
   color: rgb(129, 129, 129);
-  border-radius:0;
+  border-radius:10px;
 
+}
+
+#rq17{
+  border-radius: 10px;
 }
 
 #username{
@@ -260,9 +283,12 @@ body {
 }
 
 #rq17{
-  font-family: "Calluna-Regular";
 
   padding-bottom: 10px;
+}
+
+.pointInput{
+  border-radius: 10px;
 }
 
 #q17length{
@@ -405,7 +431,7 @@ footer{
   left:0px;
   right: 0;
   bottom:0px;
-  height:100px;
+  height:120px;
   width:100%;
   background:#00B18C;
 
@@ -422,7 +448,7 @@ footer{
 }
 
 #footer5{
-  background:#3E474F;
+  background:#415A77;
   position: static;
   left:0px;
   right: 0;
@@ -486,10 +512,88 @@ footer{
   margin-bottom: 0px;
   padding-top: 20px;
 }
-#footer h1{
+#new{
+
+  text-align: center;
+}
+
+/*#footer h1{
   color: white;
   font-family: 'Karla';
   text-align: left;
   padding-top: 35px;
   padding-left: 100px;
+}*/
+
+.annotated-list{
+  text-align: center;
+
+}
+
+.sort {
+  padding:8px 30px;
+  border-radius: 6px;
+  border:none;
+  display:inline-block;
+  color:#A6A8A8;
+  text-decoration: none;
+  background-color: transparent;
+  height:100px;
+  font-family: "Karla";
+  font-weight: 400;
+
+}
+.sort:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: #00B18C;
+}
+.sort:focus {
+  outline:none;
+}
+.sort:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  content:"";
+  position: relative;
+  top:-10px;
+  right:-5px;
+}
+.sort.asc:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #00B18C;
+  content:"";
+  position: relative;
+  top:13px;
+  right:-5px;
+}
+.sort.desc:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #00B18C;
+  content:"";
+  position: relative;
+  top:-10px;
+  right:-5px;
+}
+
+.search{
+  padding: 5px;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+  background-color: #00B18C;
+  border-color: #00B18C;
+}
+
+.pagination>li>a, .pagination>li>span{
+  color: #A6A8A8;
 }

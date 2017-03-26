@@ -25,7 +25,7 @@ const grabBlog = require('./routes/grabBlog');
 //timer program variables
 const questionId = 1
 const testChangeOfQuestionTime = 5000 //5 seconds
-const changeOfQuestionTime = 1000 * 60 * 60 * 24 //24 hours
+const changeOfQuestionTime = 43200000 //12 hours
 
 function checkForUpdates(amountOfQuestions){
   setInterval(function(){
@@ -120,7 +120,8 @@ db.db.sync({
 .then(function(){
     return db.User.create({
       username: "kevin",
-      password: "12345678"
+      password: "12345678",
+      email: "thomasdaalder@gmail.com"
     })
   })
 .then(function(user){

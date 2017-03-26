@@ -4,22 +4,22 @@ block content
   .grabblog
       <h2>#{blogPost.title}</h2>
       p #{blogPost.body}
-      footer #{blogPost.date}
-      h3 Comments about this blog post
-      - for (var i = 0; i < blogPost.comments.length; i++) {
-      .stylepanel
-        .panel.panel-info
-          .panel-heading #{blogPost.comments[i].username}
-          .panel-body #{blogPost.comments[i].body}
-      - }
-  .stylecomments
-      h3 Leave a comment
-
-      form(action='/blog/' + paramsID, method='POST')
-        .form-group
-          label(for='exampleInputEmail1') Username
-          input#username.form-control(type='username', name='username', placeholder='Username')
-        .form-group
-          label(for='exampleInputPassword1') Comment Text
-          textarea#comment.form-control(type='comment', rows='5', name='comment', placeholder='Comment here')
-        button.btn.btn-primary(type='submit') Place Comment
+      
+      //- h3 Comments about this blog post
+      //- - for (var i = 0; i < blogPost.comments.length; i++) {
+      //- .stylepanel
+      //-   .panel.panel-info
+      //-     .panel-heading #{blogPost.comments[i].username}
+      //-     .panel-body #{blogPost.comments[i].body}
+      //- - }
+  //- .stylecomments
+  //-     h3 Leave a comment
+  //- 
+  //-     form(action='/blog/' + paramsID, method='POST')
+  //-       .form-group
+  //-         label(for='exampleInputEmail1') Username
+  //-         input#username.form-control(type='username', name='username', placeholder='Username')
+  //-       .form-group
+  //-         label(for='exampleInputPassword1') Comment Text
+  //-         textarea#comment.form-control(type='comment', rows='5', name='comment', placeholder='Comment here')
+  //-       button.btn.btn-primary(type='submit') Place Comment
