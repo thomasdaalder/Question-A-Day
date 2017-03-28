@@ -62,7 +62,7 @@ function startTimer(){
     })
     .catch(e => console.log(e))
 
-  }, 1500)
+  }, 5000)
 }
 
 //Starting the timer here

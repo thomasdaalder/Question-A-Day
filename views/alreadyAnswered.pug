@@ -1,0 +1,13 @@
+include ./partials/_head.pug
+include ./partials/_footer.pug
+include ./partials/_scripts.pug
+include ./partials/_navbar-alreadyAnswered.pug
+
+block content	
+  
+  if user
+    .intro-message2
+    
+        img#new(src="/img/thanks.png")
+    a(href='/profile')
+      button#linkbutton.btn.btn-primary.submitbutton(type='submit') Profile

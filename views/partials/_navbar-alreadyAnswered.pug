@@ -7,9 +7,7 @@ nav.navbar.navbar-default.navbar-fixed-top
 			img(src="/img/qad_logo.png")
 	ul.nav.navbar-form.navbar-right
 					.form-group
-						if user
-								#bs-example-navbar-collapse-1.collapse.navbar-collapse
-									a.btn.btn-success.btn-register(href='/createPost') Today's Question
+
 		
 									ul.nav.navbar-nav.navbar-right
 										.dropdown
@@ -21,14 +19,3 @@ nav.navbar.navbar-default.navbar-fixed-top
 															li.divider(role='separator')
 												li
 													a(href='/logout') Log out
-
-													
-						else
-										form(action='/login', method='POST')
-													.form-group
-															input#username.form-control(type='username', name='username', value='Thomas',placeholder='Username')
-													.form-group
-															input#password.form-control(type='password', minlength='8', value='12345678',required, name='password', placeholder='Password')
-													button.btn.btn-success.btn-login(type='submit', id='submit') Login
-													a(href='/register')
-																button.btn.btn-info.btn-register-register(type='button') Register
